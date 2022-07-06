@@ -1,6 +1,14 @@
-FROM debian
-
-
-RUN echo wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.5.0/emby-server-deb_4.7.5.0_amd64.deb
-RUN echo dpkg -i emby-server-deb_4.7.5.0_amd64.deb
-EXPOSE 8096
+FROM node:16-alpine
+WORKDIR /app
+ENV NODE_ENV production
+COPY /next.config.js ./
+COPY /public ./public
+COPY /package.json ./package.json
+# Automatically leverage output traces to reduce image size. https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY /.next/standalone ./
+COPY /.next/static ./.next/static
+EXPOSE 7575
+ENV PORT 7575
+RUN apk add tzdata
+VOLUME /app/data/configs
+CMD ["node", "server.js"]
