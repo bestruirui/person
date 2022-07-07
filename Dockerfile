@@ -1,1 +1,1 @@
-ajnart/homarr
+FROM ajnart/homarr
