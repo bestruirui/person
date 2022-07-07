@@ -1,1 +1,1 @@
-FROM ajnart/homarr
+FROM soulteary/flare
