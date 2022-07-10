@@ -1,1 +1,1 @@
-FROM soulteary/flare
+FROM portainer/portainer
