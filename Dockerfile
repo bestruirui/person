@@ -1,4 +1,4 @@
-FROM golang:1.15 as builder
+FROM ffdfgdfg/nps
 ARG GOPROXY=direct
 WORKDIR /go/src/ehang.io/nps
 COPY . .
