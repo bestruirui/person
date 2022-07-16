@@ -1,0 +1,5 @@
+[[host]]
+bind="http://bestrui.ipv6d.my.id:7777/"
+target="https://github.com/"
+upstream="github.com:443"
+timeout=5000
